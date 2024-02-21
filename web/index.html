@@ -1,0 +1,98 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Probar API Rest</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Onest:wght@100..900&display=swap" rel="stylesheet">
+  
+    
+  <script type="module">
+    
+    fetch('http://localhost:1200/movies')
+      .then(res => res.json())
+      .then(movies => {
+        const html = movies.map(movie => {
+          return `
+            <article data-id="${movie.id}">
+              <img class="screen-img" src="${movie.poster}" alt="${movie.title}">
+              <h2 class="title-movie">${movie.title}</h2>
+              <p class="year-movie">${movie.year}</p>
+
+              <button class="button-movie">Eliminar</button>
+            </article>
+          `
+        }).join('')
+
+        document.querySelector('#main-peliculas').innerHTML = html
+
+        document.addEventListener('click', e => {
+          if (e.target.matches('button')) {
+            const article = e.target.closest('article')
+            const id = article.dataset.id
+
+            fetch(`http://localhost:1200/movies/${id}`, {
+              method: 'DELETE'
+            })
+              .then(res => {
+                if (res.ok) {
+                  article.remove()
+                }
+              })
+            }
+          
+        })
+      })
+    
+    fetch(`http://localhost:1200/movies?genre=ACTION`)
+      .then(res => res.json())
+      .then(movies =>{
+        const central = movies.map(movie => {
+          return `
+            <article data-id="${movie.id==="d3dd0fad-00cc-4210-8bcc-5f10nd3b98c3"}">
+              <h2>${movie.title}</h2>
+              <p class="popular-year">${movie.year}</p>
+              <p class="popular-director">${movie.director}</p>
+              <span class="popular-rate">${movie.rate}</span>
+
+            </article>
+          `
+        }).join('')
+
+        document.querySelector('#left-peliculas').innerHTML = central
+      })
+  </script>
+</head>
+<body>
+  <header>
+		<div class="logo-class-nav">
+            <img src="https://www.cuevana3.eu/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.01e819b6.png&w=256&q=75" class="logo" alt="">
+        </div>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">movies</a></li>
+				<li><a href="#">series</a></li>
+				<li><a href="#">info</a></li>
+                <button type="button" class="button-nav">registarse</button>
+			</ul>
+	</header>
+  <section id="home-peliculas">
+    <div class="movie-principal">
+
+    </div>
+  </section>
+ <main>
+  <h1 class="title">Peliculas</h1>
+  <section id="main-peliculas">
+  </section>
+  <section id="left-peliculas">
+    <h2>Peliculas en tendencia</h2>
+  </section>
+ </main>
+
+ <script src="scroll.js"></script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+  width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+  ::-webkit-scrollbar{
+    width: 1em;
+}
+::-webkit-scrollbar-track{
+    background: #080f28;
+    width: 1em;
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(rgb(16, 48, 91), #2277a2, #9fd6ff);
+}
+header{
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  padding: 15px;
+  left: 0;
+  width: 100vw;
+  max-width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  transition: 0.7s;
+  z-index: 5;
+  background-color:#080f2800;
+}
+header.abajo{
+  background-color: #080f28;
+  transform: scale(1.03);
+}
+.button-nav.abajo{
+  background-color: #656aad;
+  transition: 0.3s;
+  transform: scaleX(2in);
+}
+.button-nav:hover.abajo{
+  background-color: #555EE1;
+}
+.logo-class-nav{
+  display: flex;
+  align-items: center;
+}
+.logo-class-nav .logo{
+  position: relative;
+  transition: 1.5s;
+  object-fit: contain;
+  text-decoration: none;
+}
+header.abajo p{
+  color:#fff;
+}
+header ul{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul li{
+  list-style: none;
+}
+
+header ul li a{
+  position: relative;
+  font-family: helvetica;
+  margin: 0 20px;
+  text-decoration: none;
+  color: #ffffff;
+}
+header.abajo ul li a{
+  color:#fff;
+}
+.button-nav{
+  font-family: helvetica;
+  padding: 10px 20px;
+  border-radius: 15px;
+  border-style: none;
+  outline: none;
+  background-color: #555EE1;
+  color: #FFF;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  overflow: hidden;
+  text-overflow:ellipsis;  
+}
+main{
+    display: flex;
+}
+.movie-principal{
+  width: 100%;
+  height: 90%;
+  background-image: linear-gradient(rgba(15, 13, 70, 0.3), #080f28c7),url('https://wallpapercave.com/wp/wp5119509.jpg');
+  background-size: cover;
+    background-position: center center;
+  position: relative;
+}
+/*home peliculas*/
+#home-peliculas{
+  width: 100vw;
+  height: 90vh;
+  background-color: #080f28;
+}
+#main-peliculas{
+    width: 70vw;
+    background-color:#080f28;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    }
+.title{
+  color: aliceblue;
+  position: absolute;
+  z-index: 3;
+  font-size: 2rem;
+  text-wrap: nowrap;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  width: 70vw;
+  padding-top: 30px;
+  text-align: center;
+}
+  article {
+    padding-top: 20px;
+    place-content: center;
+    place-items: center;
+    display: grid;
+  }
+  .screen-img {
+    height: 300px;
+    width: 180px;
+    margin-bottom: 10px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: 1s;
+  }
+  .screen-img:hover{
+    transform: translateY(-0.2in);
+    transition: 0.4s;
+  }
+  .title-movie{
+    color:#fff;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 1.2em;
+    font-family: Arial, Helvetica, sans-serif;
+    text-indent: 2em hanging;
+text-indent: 2em each-line;
+text-indent: 2em hanging each-line;
+    text-wrap: nowrap;
+  }
+  .year-movie{
+    position: absolute;
+    z-index: 3;
+    font-size: .75rem;
+    font-weight: 700;
+    background-color: #007aff;
+    padding: 0.1rem 0.5rem;
+    line-height: 1.2rem;
+    border-radius: 1rem;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 160px;
+    margin-left: 120px;
+   
+  }
+  .button-movie {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: #183153;
+    font-family: "Montserrat", sans-serif;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+    padding: 15px 22px;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+
+    transition: all 0.3s ease-in-out;
+  }
+  .button-movie:after {
+    content: " ";
+    width: 0%;
+    height: 100%;
+    background: #ffd401;
+    position: absolute;
+    transition: all 0.4s ease-in-out;
+    right: 0;
+  }
+  .button-movie:hover::after {
+    right: auto;
+    left: 0;
+    width: 100%;
+  }
+
+  .button-movie:hover{
+    color: #183153;
+    animation: scaleUp 0.3s ease-in-out;
+  }
+  @keyframes scaleUp {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(0.95);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  /*_______bar left________--*/
+
+#left-peliculas{
+    background-color: #060b20;
+    width: 30vw;
+    top: 0;
+    overflow:scroll;
+    justify-content: center;
+    padding: 10px;
+}
+.movie-popular{
+  height: 20%;
+  background-color: #007aff;
+  padding-top: 20px;
+  place-content: center;
+  place-items: center;
+  display: grid;
+  gap: 50px;
+}
+#left-peliculas h2{
+  padding-top: 20px;
+  text-align: center;
+    color: #8DA0BC;
+    display: block;
+    font-size: 1.2rem;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+}
+.popular-year{
+  color: aliceblue;
+  font-family: "Onest", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bolder;
+  font-style: normal;
+}
+@media(max-width:852px){
+  header ul li{
+    display: none;
+  }
+  #left-peliculas{
+    display: none;
+    transition: 1s;
+  
+  }
+  #main-peliculas{
+    width: 100vw;
+    transition: 0.2s;
+  }
+  .title{
+    width: 100vw;
+    text-align: center;
+  }
+}
