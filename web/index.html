@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Probar API Rest</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="left-bar.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Onest:wght@100..900&display=swap" rel="stylesheet">
@@ -47,18 +48,22 @@
         })
       })
     
-    fetch(`http://localhost:1200/movies?genre=ACTION`)
+    fetch(`http://localhost:1200/movies?genre=Popular`)
       .then(res => res.json())
       .then(movies =>{
         const central = movies.map(movie => {
           return `
-            <article data-id="${movie.id==="d3dd0fad-00cc-4210-8bcc-5f10nd3b98c3"}">
-              <h2>${movie.title}</h2>
-              <p class="popular-year">${movie.year}</p>
-              <p class="popular-director">${movie.director}</p>
-              <span class="popular-rate">${movie.rate}</span>
-
-            </article>
+          <article class="rank-movies">
+            <img class="rank-movies--img" src="${movie.poster}" alt="${movie.title}">
+            <div class="rank-movies--info-1">
+              <h2 class="rank-movies-h2">${movie.title}</h2>
+                <div class="rank-movies--info-2">
+                    <span class="popular-rate">${movie.rate}</span>
+                    <p class="popular-duration">${movie.duration}min</p>
+                    <p class="popular-year">${movie.year}</p>
+                </div>
+            </div>
+    </article>
           `
         }).join('')
 
@@ -88,8 +93,8 @@
   <h1 class="title">Peliculas</h1>
   <section id="main-peliculas">
   </section>
-  <section id="left-peliculas">
-    <h2>Peliculas en tendencia</h2>
+  <h2 class="h2-movies-ranking">Peliculas en tendencia</h2>
+  <section id="left-peliculas">    
   </section>
  </main>
 

@@ -11,15 +11,16 @@ POST http://localhost:1200/movies
 Content-Type: application/json
 
 {
-    "title":"The GoodFather",
-    "year":1972,
+    "title":"Rapidos y furiosos 9",
+    "year":2021,
     "director":"Fracis Ford",
-    "duration":175,
-    "poster":"https://static.wikia.nocookie.net/doblaje/images/9/9a/Elpadrino.jpg/revision/latest?cb=20211023042804&path-prefix=es",
+    "duration":223,
+    "poster":"https://www.universalpictures.com.mx/tl_files/content/movies/fast9/posters/11.jpg",
     "genre": [
         "Crime",
-        "Drama"
-    ]
+        "Action"
+    ],
+    "rate": 7.3
 }
 
 ### Actualizar

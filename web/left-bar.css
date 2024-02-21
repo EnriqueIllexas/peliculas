@@ -1,0 +1,87 @@
+*{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.rank-movies--info-2 > p{
+    color: rgba(240, 248, 255, 0.641);
+    font-size: 1rem;
+}
+#left-peliculas{
+    background-color: #060b20;
+    width: 30vw;
+    top: 0;
+    overflow:scroll;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding-top: 5rem;
+}
+.h2-movies-ranking{
+  color: aliceblue;
+  position: absolute;
+  z-index: 14;
+  margin-left: 77%;
+  margin-top: 30px;
+}
+
+.rank-movies{
+    background-color: #080f28;
+    width: 90%;
+    transition: 0.6s;
+    border-radius: 0.6rem;
+    display: flex; 
+    justify-content: space-between;
+}
+.rank-movies--img{
+    width: 25%;
+    height: 90%;
+    opacity: 1;
+    cursor: pointer;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.rank-movies:hover{
+    background-color: #183153;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.rank-movies--info-1{
+    margin-right: 5.5rem;
+}
+.rank-movies--info-2{
+    display: flex;
+    gap: 5px;
+}
+.rank-movies-h2{
+    color: #acb9cd;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 1.2em;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-indent: 2em hanging;
+    text-indent: 2em each-line;
+    text-indent: 2em hanging each-line;
+    text-wrap: nowrap;
+}
+.popular-rate{
+    color: yellow;
+    font-size: 1.1rem;
+}
+@media(max-width:852px){
+  header ul li{
+    display: none;
+  }
+  #left-peliculas{
+    display: none;
+    transition: 1s;
+  
+  }
+  #main-peliculas{
+    width: 100vw;
+    transition: 0.2s;
+  }
+  .title{
+    width: 100vw;
+    text-align: center;
+  }
+}
