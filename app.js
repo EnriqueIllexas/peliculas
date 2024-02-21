@@ -3,6 +3,8 @@ import { moviesRouter } from './routes/movies.js'
 import cors from 'cors'
 
 const verOrigenes =[
+    'https://peliculas-gdz9nj4f6-enriqueillexas-projects.vercel.app/',
+    'https://enriqueillexas.github.io/peliculas/',
     'http://localhost:1200/movies',
     'http://localhost:1200',
     'http://127.0.0.1:5500/web/index.html',
