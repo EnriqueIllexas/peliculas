@@ -8,11 +8,11 @@ export class MovieController{
         res.json(movies)
       }
     
-    static async getById (req, res){
+    static async getById(req, res){
         const { id } = req.params
-    const movie = await MovieModel.getByID({id})
-    if(movie) return res.json(movie)
-    res.status(404).json({message: `La peli no se ha encontrado  🚫😢🎬`})
+        const movie = await MovieModel.getById({ id })
+        if(movie) return res.json(movie)
+        res.status(404).json({message: `La peli no se ha encontrado  🚫😢🎬`})
     }
     static async create(req, res){
         const result = validateMovie(req.body)

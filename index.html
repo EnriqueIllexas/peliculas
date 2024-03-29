@@ -10,20 +10,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Onest:wght@100..900&display=swap" rel="stylesheet">
   
-    
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script type="module">
     
+    const movieRemove = document.querySelector(".info-movie-remove");
+    movieRemove.classList.add("inactive")
+
     fetch('http://localhost:1200/movies')
       .then(res => res.json())
       .then(movies => {
         const html = movies.map(movie => {
           return `
             <article data-id="${movie.id}">
-              <img class="screen-img" src="${movie.poster}" alt="${movie.title}">
-              <h2 class="title-movie">${movie.title}</h2>
+              <img class="screen-img" src="${movie.poster}" alt="$ {movie.title}">
               <p class="year-movie">${movie.year}</p>
 
-              <button class="button-movie">Eliminar</button>
+              <div class="movie-opcion">
+                <h2 class="title-movie">${movie.title}</h2>
+                <button class="button-movie"><img src="./web/icons/delete-movie.svg"></button>
+              </div>
             </article>
           `
         }).join('')
@@ -41,12 +46,32 @@
               .then(res => {
                 if (res.ok) {
                   article.remove()
+                  movieRemove.classList.remove("inactive")
+                  swal({
+                    title: "Estas seguro de eliminar la pelicula de favoritos?",
+                    text: "esta accion será permanente",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                  })
+                  .then((willDelete) => {
+                    if (willDelete) {
+                      swal("Se eliminó la pelicula", {
+                        icon: "success",
+                      });
+                    } else {
+                      swal("La pelicula sigue en marcha! 🗿🍷");
+                    }
+                  });
                 }
               })
             }
           
         })
+        
+        
       })
+      
     
     fetch(`http://localhost:1200/movies?genre=Popular`)
       .then(res => res.json())
@@ -86,18 +111,21 @@
 	</header>
   <section id="home-peliculas">
     <div class="movie-principal">
-
     </div>
   </section>
  <main>
   <h1 class="title">Peliculas</h1>
   <section id="main-peliculas">
+    <div class="info-movie-remove">
+      <h2>La pelicula ha sido eliminada correctamente ✔</h2>
+      <p>La accion no se podrá recuperar.</p>
+    </div>
   </section>
   <h2 class="h2-movies-ranking">Peliculas en tendencia</h2>
   <section id="left-peliculas">    
   </section>
  </main>
 
- <script src="scroll.js"></script>
+ <script src="/web/scroll.js"></script>
 </body>
 </html>

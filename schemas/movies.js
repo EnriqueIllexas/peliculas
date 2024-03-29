@@ -20,6 +20,7 @@ const movieShema = z.object({
     )
 })
 
+
 export function validateMovie (input){
     return movieShema.safeParse(input)
 }

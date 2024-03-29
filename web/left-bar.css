@@ -1,4 +1,5 @@
 *{
+    
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .rank-movies--info-2 > p{
@@ -68,7 +69,7 @@
     color: yellow;
     font-size: 1.1rem;
 }
-@media(max-width:852px){
+@media(max-width:750px){
   header ul li{
     display: none;
   }
@@ -80,6 +81,7 @@
   #main-peliculas{
     width: 100vw;
     transition: 0.2s;
+    gap: 20px;
   }
   .title{
     width: 100vw;
@@ -88,4 +90,17 @@
   .h2-movies-ranking{
     display: none;
   }
+}
+@media(min-width:750px){
+  .rank-movies-h2{
+    color: #acb9cd;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 1em;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-indent: 1.4em hanging;
+    text-indent: 1.4em each-line;
+    text-indent: 1.4em hanging each-line;
+    text-wrap: nowrap;
+}
 }
